@@ -24,7 +24,7 @@ This bot, in particular, can help you in different ways. The messages the bot se
 |`porno`|When someone writes `porno` (_porn_ in english), it helps you with that situation<br>(it answers with random line of `files/tblop.txt` with the message "A ver porno a `<line>`", that means _"To watch porn, go to `<line>`"_)|
 |`/ping`|Shows that it is working (answers "Yo tiro", that means _"I'm working"_)|
 |`/oc`|It demonstrates the agreement with the situation (send a voice note with the file `files/oc.ogg`)|
-|`/gracies`|It thanks you very kindly in Mallorca's language (send a video note with the file `files/gracies.mp4`)|
+|`/gracies`|It thanks you very kindly in Mallorca's language (sends a video note with the file `files/gracies.mp4` or `files/gracies2.mp4` randomly selected)|
 
 **NOTE:** The files are not available in this repo by request of the owner and/or for avoiding any trouble.
 
@@ -50,12 +50,12 @@ TEL_BOT_TOKEN=<API Key>
 
 You can also ditch the file and put the key on a system variable with the same name, but it will be volatile. The file it's only for permanent storage porpuses.
 
-The files directory must by in the same path as `main.py`.
+The `files` directory must by in the same path as the `golfillobot` folder, or in the directory you are positioned in the terminal at the time of running the bot.
 
 Finally, start the bot with
 
 ```bash
-python3 main.py
+python3 golfillobot/main.py
 ```
 
 ### **Docker** 🐋 (recommended method <3)

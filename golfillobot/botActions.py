@@ -11,7 +11,7 @@ def sendvideonote(bot: Bot, message: Message, video):
     bot.send_video_note(chat_id=message.chat_id, video_note=video)
 
 def leerLista():
-    with open("./files/tblop.txt", 'r') as tblop:
+    with open("./files/tblop.txt", "r") as tblop:
         lista = [linea for linea in tblop]
     return lista
 
@@ -34,7 +34,7 @@ class GolfilloActions(object):
     # /oc
     @staticmethod
     def oc(bot: Bot, update: Update):
-        voice = open("./files/oc.ogg", 'rb')
+        voice = open("./files/oc.ogg", "rb")
         sendaudio(bot, update.message, voice)
 
     # /ping
@@ -46,5 +46,6 @@ class GolfilloActions(object):
     # /gracies
     @staticmethod
     def gracies(bot: Bot, update: Update):
-        video = open("./files/gracies.mp4", 'rb')
+        notes = ["gracies", "gracies2"]
+        video = open("./files/" + random.choice(notes) + ".mp4", "rb")
         sendvideonote(bot, update.message, video)

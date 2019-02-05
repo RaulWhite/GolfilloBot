@@ -8,10 +8,10 @@ RUN apk --no-cache add build-base libffi-dev openssl-dev && \
     rm /app/requirements.txt && \
     apk --no-cache del build-base libffi-dev openssl-dev && \
     apk --no-cache add libffi openssl
-COPY main.py message_filter.py botActions.py tokens.py ./
+COPY golfillobot/ ./golfillobot
 
 ENV PYTHONPATH=/app/
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONIOENCODING=UTF-8
 
-CMD python main.py
+CMD python3 golfillobot/main.py
