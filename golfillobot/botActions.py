@@ -1,8 +1,8 @@
 from telegram import Bot, Update, Message
 import os, random
 
-def send(bot: Bot, message: Message, text: str):
-    bot.send_message(chat_id=message.chat_id, text=text, reply_to_message_id=message.message_id)
+def send(bot: Bot, message: Message, text: str, **kwargs):
+    bot.send_message(chat_id=message.chat_id, text=text, reply_to_message_id=message.message_id, **kwargs)
 
 def sendaudio(bot: Bot, message: Message, voice):
     bot.send_voice(chat_id=message.chat_id, voice=voice, reply_to_message_id=message.message_id)
@@ -49,3 +49,26 @@ class GolfilloActions(object):
         notes = ["gracies", "gracies2"]
         video = open("./files/" + random.choice(notes) + ".mp4", "rb")
         sendvideonote(bot, update.message, video)
+
+    # /f
+    @staticmethod
+    def f(bot: Bot, update: Update):
+        text = '''```
+FFFFFFFFFFFFFFFFFFFFFF
+F::::::::::::::::::::F
+F::::::::::::::::::::F
+FF::::::FFFFFFFFF::::F
+  F:::::F       FFFFFF
+  F:::::F             
+  F::::::FFFFFFFFFF   
+  F:::::::::::::::F   
+  F:::::::::::::::F   
+  F::::::FFFFFFFFFF   
+  F:::::F             
+  F:::::F             
+FF:::::::FF           
+F::::::::FF           
+F::::::::FF           
+FFFFFFFFFFF           
+```'''
+        send(bot, update.message, text, parse_mode='Markdown')
