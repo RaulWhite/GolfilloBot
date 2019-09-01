@@ -53,7 +53,8 @@ class GolfilloActions(object):
     # /f
     @staticmethod
     def f(bot: Bot, update: Update):
-        text = '''```
+        fs = [
+        '''```
 FFFFFFFFFFFFFFFFFFFFFF
 F::::::::::::::::::::F
 F::::::::::::::::::::F
@@ -70,5 +71,30 @@ FF:::::::FF
 F::::::::FF           
 F::::::::FF           
 FFFFFFFFFFF           
-```'''
+```''',
+        '''```
+FFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFF
+FFFFFFFFFFFFFFFFFFFFFF
+  FFFFFFF       FFFFFF
+  FFFFFFF             
+  FFFFFFFFFFFFFFFFF   
+  FFFFFFFFFFFFFFFFF   
+  FFFFFFFFFFFFFFFFF    
+  FFFFFFFFFFFFFFFFF   
+  FFFFFFF             
+  FFFFFFF             
+FFFFFFFFFFF           
+FFFFFFFFFFF           
+FFFFFFFFFFF           
+FFFFFFFFFFF           
+```''']
+        text = random.choice(fs)
         send(bot, update.message, text, parse_mode='Markdown')
+
+    # /papopepo
+    @staticmethod
+    def papopepo(bot: Bot, update: Update):
+        voice = open("./files/papopepo.ogg", "rb")
+        sendaudio(bot, update.message, voice)

@@ -16,6 +16,7 @@ dispatcher.add_handler(CommandHandler("oc", Gactions.oc))
 dispatcher.add_handler(CommandHandler("ping", Gactions.ping))
 dispatcher.add_handler(CommandHandler("gracies", Gactions.gracies))
 dispatcher.add_handler(CommandHandler("f", Gactions.f))
+dispatcher.add_handler(CommandHandler("papopepo", Gactions.papopepo))
 
 if __name__ == '__main__':
     updater.start_polling()
