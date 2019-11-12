@@ -27,6 +27,7 @@ This bot, in particular, can help you in different ways. The messages the bot se
 |`/gracies`|It thanks you very kindly in Mallorca's language (sends a video note with the file `files/gracies.mp4` or `files/gracies2.mp4` randomly selected)|
 |`/f`|Pays respects in a very original way (prints a big `F` chosen randomly from an array of texts)|
 |`/papopepo`|It sings along one of the spiciest memes between my friends and I (send a voice note with the file `files/papopepo.ogg`)|
+|`/pr`|Sends a request for approving a PR (_Pull Request_) (sends photo `files/pr.jpg`)|
 
 **NOTE:** The files are not available in this repo by request of the owner and/or for avoiding any trouble.
 

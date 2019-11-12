@@ -7,6 +7,9 @@ def send(bot: Bot, message: Message, text: str, **kwargs):
 def sendaudio(bot: Bot, message: Message, voice):
     bot.send_voice(chat_id=message.chat_id, voice=voice, reply_to_message_id=message.message_id)
 
+def sendphoto(bot: Bot, message: Message, image):
+    bot.send_photo(chat_id=message.chat_id, photo=image, reply_to_message_id=message.message_id)
+
 def sendvideonote(bot: Bot, message: Message, video):
     bot.send_video_note(chat_id=message.chat_id, video_note=video)
 
@@ -98,3 +101,9 @@ FFFFFFFFFFF
     def papopepo(bot: Bot, update: Update):
         voice = open("./files/papopepo.ogg", "rb")
         sendaudio(bot, update.message, voice)
+
+    # /pr
+    @staticmethod
+    def pr(bot: Bot, update: Update):
+        photo = open("./files/pr.jpg", "rb")
+        sendphoto(bot, update.message, photo)
