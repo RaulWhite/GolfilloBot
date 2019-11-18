@@ -107,3 +107,10 @@ FFFFFFFFFFF
     def pr(bot: Bot, update: Update):
         photo = open("./files/pr.jpg", "rb")
         sendphoto(bot, update.message, photo)
+
+    # /flauta
+    @staticmethod
+    def flauta(bot: Bot, update: Update):
+        voice = open('./files/flauta.ogg', 'rb')
+        sendaudio(bot, update.message, voice)
+
