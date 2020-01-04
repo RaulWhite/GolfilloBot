@@ -114,3 +114,8 @@ FFFFFFFFFFF
         voice = open('./files/flauta.ogg', 'rb')
         sendaudio(bot, update.message, voice)
 
+    # /hola
+    @staticmethod
+    def hola(bot: Bot, update: Update):
+        video = open("./files/hola.mp4", "rb")
+        sendvideonote(bot, update.message, video)
