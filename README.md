@@ -28,6 +28,7 @@ This bot, in particular, can help you in different ways. The messages the bot se
 |`/f`|Pays respects in a very original way (prints a big `F` chosen randomly from an array of texts)|
 |`/papopepo`|It sings along one of the spiciest memes between my friends and I (send a voice note with the file `files/papopepo.ogg`)|
 |`/pr`|Sends a request for approving a PR (_Pull Request_) (sends photo `files/pr.jpg`)|
+|`/flauta`|Invokes the awesomeness with a traditional flute song (sends a voice note with the file `files/flauta.ogg`)|
 |`/hola`|Introduces itself ironically (sends a video note with the file `files/hola.mp4`)|
 
 **NOTE:** The files are not available in this repo by request of the owner and/or for avoiding any trouble.
