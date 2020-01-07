@@ -30,6 +30,7 @@ This bot, in particular, can help you in different ways. The messages the bot se
 |`/pr`|Sends a request for approving a PR (_Pull Request_) (sends photo `files/pr.jpg`)|
 |`/flauta`|Invokes the awesomeness with a traditional flute song (sends a voice note with the file `files/flauta.ogg`)|
 |`/hola`|Introduces itself ironically (sends a video note with the file `files/hola.mp4`)|
+|`/scatman`|Converts the bot into a very powerfull Scatman (sends voice with the file `files/sc.opus`)|
 
 **NOTE:** The files are not available in this repo by request of the owner and/or for avoiding any trouble.
 
