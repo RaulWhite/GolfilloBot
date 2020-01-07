@@ -20,6 +20,7 @@ dispatcher.add_handler(CommandHandler("papopepo", Gactions.papopepo))
 dispatcher.add_handler(CommandHandler("pr", Gactions.pr))
 dispatcher.add_handler(CommandHandler("flauta", Gactions.flauta))
 dispatcher.add_handler(CommandHandler("hola", Gactions.hola))
+dispatcher.add_handler(CommandHandler('scatman', Gactions.scatman))
 
 if __name__ == '__main__':
     updater.start_polling()

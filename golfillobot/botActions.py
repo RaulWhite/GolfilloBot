@@ -119,3 +119,10 @@ FFFFFFFFFFF
     def hola(bot: Bot, update: Update):
         video = open("./files/hola.mp4", "rb")
         sendvideonote(bot, update.message, video)
+
+    # /scatman
+    @staticmethod
+    def scatman(bot: Bot, update: Update):
+        voice = open('./files/sc.opus', 'rb')
+        sendaudio(bot, update.message, voice)
+
