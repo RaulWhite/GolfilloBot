@@ -3,7 +3,7 @@ FROM ${platform}/python:alpine
 
 WORKDIR /app
 COPY requirements.txt ./
-RUN apk --no-cache add build-base libffi-dev openssl-dev && \
+RUN apk --no-cache add build-base libffi-dev openssl-dev jpeg-dev zlib-dev freetype-dev && \
     pip install -r requirements.txt && \
     rm /app/requirements.txt && \
     apk --no-cache del build-base libffi-dev openssl-dev && \
