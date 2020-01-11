@@ -1,5 +1,6 @@
 from telegram import Bot, Update, Message
 import os, random
+from specialActions import create_viejotruco
 
 def send(bot: Bot, message: Message, text: str, **kwargs):
     bot.send_message(chat_id=message.chat_id, text=text, reply_to_message_id=message.message_id, **kwargs)
@@ -126,3 +127,17 @@ FFFFFFFFFFF
         voice = open('./files/sc.opus', 'rb')
         sendaudio(bot, update.message, voice)
 
+    # /viejotruco
+    @staticmethod
+    def viejotruco(bot: Bot, update: Update):
+        text = update.message.text
+        if len(text.split()) > 1:
+            text = text.split(" ", 1)[1]
+        else:
+            text = ""
+        create_viejotruco("./files/truco_original.png", "./files/truco_caer.png",
+                          "./files/truco_generated.jpg", "./files/Cantarell-BoldOblique.ttf",
+                           text)
+        photo = open("./files/truco_generated.jpg", "rb")
+        sendphoto(bot, update.message, photo)
+        os.remove("./files/truco_generated.jpg")
