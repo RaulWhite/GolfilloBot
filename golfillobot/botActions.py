@@ -141,3 +141,10 @@ FFFFFFFFFFF
         photo = open("./files/truco_generated.jpg", "rb")
         sendphoto(bot, update.message, photo)
         os.remove("./files/truco_generated.jpg")
+
+    # /lajungla
+    @staticmethod
+    def lajungla(bot: Bot, update: Update):
+        voice = open('./files/viernesdelajungla.ogg', 'rb')
+        sendaudio(bot, update.message, voice)
+

@@ -21,6 +21,7 @@ dispatcher.add_handler(CommandHandler("flauta", Gactions.flauta))
 dispatcher.add_handler(CommandHandler("hola", Gactions.hola))
 dispatcher.add_handler(CommandHandler('scatman', Gactions.scatman))
 dispatcher.add_handler(CommandHandler('viejotruco', Gactions.viejotruco))
+dispatcher.add_handler(CommandHandler('lajungla', Gactions.lajungla))
 
 dispatcher.add_handler(MessageHandler(porno(), Gactions.porno))
 

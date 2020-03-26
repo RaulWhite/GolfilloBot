@@ -32,6 +32,7 @@ This bot, in particular, can help you in different ways. The messages the bot se
 |`/hola`|Introduces itself ironically (sends a video note with the file `files/hola.mp4`)|
 |`/scatman`|Converts the bot into a very powerfull Scatman (sends voice with the file `files/sc.opus`)|
 |`/viejotruco`|The old trick of making a modular meme (writes message on image `files/truco_original.png`)|
+|`/lajungla`|Sends an audio ad from a famous meme (sends voice with the file `files/viernesdelajungla.ogg`)|
 
 **NOTE:** The files are not available in this repo by request of the owner and/or for avoiding any trouble.
 
