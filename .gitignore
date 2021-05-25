@@ -4,6 +4,7 @@ __pycache__/
 files/*
 .env
 .directory
+.venv/
 venv/
 .vscode/
 COMMIT_MESSAGE

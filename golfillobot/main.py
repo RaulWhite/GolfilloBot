@@ -1,4 +1,4 @@
-from telegram.ext import Updater, CommandHandler, MessageHandler, BaseFilter
+from telegram.ext import Updater, CommandHandler, MessageHandler, MessageFilter
 from tokens import get_token
 from message_filter import *
 from botActions import GolfilloActions as Gactions
