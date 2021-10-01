@@ -1,18 +1,22 @@
-from telegram import Bot, Update, Message
+from telegram import Update, Message
+from telegram.ext import CallbackContext
 import os, random
 from specialActions import create_viejotruco
 
-def send(bot: Bot, message: Message, text: str, **kwargs):
-    bot.send_message(chat_id=message.chat_id, text=text, reply_to_message_id=message.message_id, **kwargs)
+def send(update: Update, text: str, **kwargs):
+    update.message.reply_text(text=text, reply_to_message_id=update.message.message_id, **kwargs)
 
-def sendaudio(bot: Bot, message: Message, voice):
-    bot.send_voice(chat_id=message.chat_id, voice=voice, reply_to_message_id=message.message_id)
+def sendaudio(update: Update, voice):
+    #bot.send_voice(chat_id=message.chat_id, voice=voice, reply_to_message_id=message.message_id
+    update.message.reply_voice(voice=voice, reply_to_message_id=update.message.message_id)
 
-def sendphoto(bot: Bot, message: Message, image):
-    bot.send_photo(chat_id=message.chat_id, photo=image, reply_to_message_id=message.message_id)
+def sendphoto(update: Update, image):
+    # bot.send_photo(chat_id=message.chat_id, photo=image, reply_to_message_id=message.message_id)
+    update.message.reply_photo(photo=image, reply_to_message_id=update.message.message_id)
 
-def sendvideonote(bot: Bot, message: Message, video):
-    bot.send_video_note(chat_id=message.chat_id, video_note=video)
+def sendvideonote(update: Update, video):
+    # bot.send_video_note(chat_id=message.chat_id, video_note=video)
+    update.message.reply_video_note(video_note=video, reply_to_message_id=update.message.message_id)
 
 def leerLista():
     with open("./files/tblop.txt", "r") as tblop:
@@ -22,41 +26,41 @@ def leerLista():
 class GolfilloActions(object):
     # porno
     @staticmethod
-    def porno(bot: Bot, update: Update):
+    def porno(update: Update, context: CallbackContext):
         lista = leerLista()
         n = random.randint(0, (len(lista) - 2))
         text = "A ver porno a " + lista[n]
-        send(bot, update.message, text)
+        send(update, text)
 
     # /list | /tblop
     @staticmethod
-    def tblop(bot: Bot, update: Update):
+    def tblop(update: Update, context: CallbackContext):
         lista = leerLista()
         text = "".join(lista)
-        send(bot, update.message, text)
+        send(update, text)
 
     # /oc
     @staticmethod
-    def oc(bot: Bot, update: Update):
+    def oc(update: Update, context: CallbackContext):
         voice = open("./files/oc.ogg", "rb")
-        sendaudio(bot, update.message, voice)
+        sendaudio(update, voice)
 
     # /ping
     @staticmethod
-    def ping(bot: Bot, update: Update):
+    def ping(update: Update, context: CallbackContext):
         text = "Yo tiro"
-        send(bot, update.message, text)
+        send(update, text)
     
     # /gracies
     @staticmethod
-    def gracies(bot: Bot, update: Update):
+    def gracies(update: Update, context: CallbackContext):
         notes = ["gracies", "gracies2"]
         video = open("./files/" + random.choice(notes) + ".mp4", "rb")
-        sendvideonote(bot, update.message, video)
+        sendvideonote(update, video)
 
     # /f
     @staticmethod
-    def f(bot: Bot, update: Update):
+    def f(update: Update, context: CallbackContext):
         fs = [
         '''```
 FFFFFFFFFFFFFFFFFFFFFF
@@ -95,41 +99,41 @@ FFFFFFFFFFF
 FFFFFFFFFFF           
 ```''']
         text = random.choice(fs)
-        send(bot, update.message, text, parse_mode='Markdown')
+        send(update, text, parse_mode='Markdown')
 
     # /papopepo
     @staticmethod
-    def papopepo(bot: Bot, update: Update):
+    def papopepo(update: Update, context: CallbackContext):
         voice = open("./files/papopepo.ogg", "rb")
-        sendaudio(bot, update.message, voice)
+        sendaudio(update, voice)
 
     # /pr
     @staticmethod
-    def pr(bot: Bot, update: Update):
+    def pr(update: Update, context: CallbackContext):
         photo = open("./files/pr.jpg", "rb")
-        sendphoto(bot, update.message, photo)
+        sendphoto(update, photo)
 
     # /flauta
     @staticmethod
-    def flauta(bot: Bot, update: Update):
+    def flauta(update: Update, context: CallbackContext):
         voice = open('./files/flauta.ogg', 'rb')
-        sendaudio(bot, update.message, voice)
+        sendaudio(update, voice)
 
     # /hola
     @staticmethod
-    def hola(bot: Bot, update: Update):
+    def hola(update: Update, context: CallbackContext):
         video = open("./files/hola.mp4", "rb")
-        sendvideonote(bot, update.message, video)
+        sendvideonote(update, video)
 
     # /scatman
     @staticmethod
-    def scatman(bot: Bot, update: Update):
+    def scatman(update: Update, context: CallbackContext):
         voice = open('./files/sc.opus', 'rb')
-        sendaudio(bot, update.message, voice)
+        sendaudio(update, voice)
 
     # /viejotruco
     @staticmethod
-    def viejotruco(bot: Bot, update: Update):
+    def viejotruco(update: Update, context: CallbackContext):
         text = update.message.text
         if len(text.split()) > 1:
             text = text.split(" ", 1)[1]
@@ -139,12 +143,12 @@ FFFFFFFFFFF
                           "./files/truco_generated.jpg", "./files/Cantarell-BoldOblique.ttf",
                            text)
         photo = open("./files/truco_generated.jpg", "rb")
-        sendphoto(bot, update.message, photo)
+        sendphoto(update, photo)
         os.remove("./files/truco_generated.jpg")
 
     # /lajungla
     @staticmethod
-    def lajungla(bot: Bot, update: Update):
+    def lajungla(update: Update, context: CallbackContext):
         voice = open('./files/viernesdelajungla.ogg', 'rb')
-        sendaudio(bot, update.message, voice)
+        sendaudio(update, voice)
 
