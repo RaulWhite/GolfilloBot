@@ -1,5 +1,5 @@
 ARG platform=library
-FROM ${platform}/python:alpine
+FROM ${platform}/python:3.10-alpine
 
 WORKDIR /app
 COPY requirements.txt ./
