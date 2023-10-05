@@ -34,22 +34,22 @@ def create_viejotruco(image_name, blank_image, saved_image, ttf, text):
                     w, h, line, wrap = needWrap(w, h, img.size[0], line, conW, font, letter)
                     if line >= linesLimit: break # Number of lines limit
                     draw.text((w, h), letter, font=font, fill=(0,0,0,255))
-                    w += font.getsize(letter)[0]
+                    w += int(font.getlength(letter))
                     w -= 7 #Condense letters
-                w += font.getsize(" ")[0] # Space at end of word
+                w += int(font.getlength(" ")) # Space at end of word
             else: # Word fits in line
                 if line >= linesLimit: break # Number of lines limit
                 draw.text((w, h), word, font=font, fill=(0,0,0,255))
-                w += font.getsize(word)[0] # New x appending drawn word width
+                w += int(font.getlength(word)) # New x appending drawn word width
     img.save(saved_image, "JPEG")
 
 def needWrap(w, h, imgW, line, conW, font, text):
     wrap = False
-    if (w + font.getsize(text)[0]) > imgW: # If it doesn't fit, new line
+    if (w + int(font.getlength(text))) > imgW: # If it doesn't fit, new line
         w = conW # Start of line
-        h += font.getsize(text)[1] # Calculate font height
+        h += font.getbbox(text)[3] # Calculate font height
         line += 1 # New line at limiter
-        wrap = (w + font.getsize(text)[0]) > imgW # If word doesn't fit, wrap it
+        wrap = (w + int(font.getlength(text))) > imgW # If word doesn't fit, wrap it
     return w, h, line, wrap
 
 def weekday():

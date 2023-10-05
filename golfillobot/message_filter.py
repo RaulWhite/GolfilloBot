@@ -1,4 +1,3 @@
-from telegram.ext import BaseFilter
 from telegram.ext.filters import MessageFilter
 
 #porno
