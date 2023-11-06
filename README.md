@@ -58,7 +58,7 @@ TEL_BOT_TOKEN=<API Key>
 
 You can also ditch the file and put the key on a system variable with the same name, but it will be volatile. The file it's only for permanent storage porpuses.
 
-The `files` directory must by in the same path as the `golfillobot` folder, or in the directory you are positioned in the terminal at the time of running the bot.
+The `files` directory must be in the same path as the `golfillobot` folder, or in the directory you are positioned in the terminal at the time of running the bot.
 
 Finally, start the bot with
 
