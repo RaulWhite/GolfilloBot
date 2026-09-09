@@ -151,3 +151,9 @@ FFFFFFFFFFF
     async def lajungla(update: Update, context: CallbackContext):
         voice = open('./files/viernesdelajungla.ogg', 'rb')
         await sendaudio(update, voice)
+
+    # /id
+        @staticmethod
+        async def id(update: Update, context: CallbackContext):
+            text = "Chat ID: " + update.effective_chat.id
+            await send(update, text)

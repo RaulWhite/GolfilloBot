@@ -21,6 +21,7 @@ application.add_handler(CommandHandler("hola", Gactions.hola))
 application.add_handler(CommandHandler('scatman', Gactions.scatman))
 application.add_handler(CommandHandler('viejotruco', Gactions.viejotruco))
 application.add_handler(CommandHandler('lajungla', Gactions.lajungla))
+application.add_handler(CommandHandler('id', Gactions.id))
 
 application.add_handler(MessageHandler(porno(), Gactions.porno))
 
