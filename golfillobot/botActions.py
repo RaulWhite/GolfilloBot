@@ -155,5 +155,5 @@ FFFFFFFFFFF
     # /id
     @staticmethod
     async def id(update: Update, context: CallbackContext):
-        text = "Chat ID: " + update.effective_chat.id
+        text = "Chat ID: " + str(update.effective_chat.id)
         await send(update, text)
