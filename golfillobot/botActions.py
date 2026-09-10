@@ -153,7 +153,7 @@ FFFFFFFFFFF
         await sendaudio(update, voice)
 
     # /id
-        @staticmethod
-        async def id(update: Update, context: CallbackContext):
-            text = "Chat ID: " + update.effective_chat.id
-            await send(update, text)
+    @staticmethod
+    async def id(update: Update, context: CallbackContext):
+        text = "Chat ID: " + update.effective_chat.id
+        await send(update, text)
