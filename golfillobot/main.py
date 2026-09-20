@@ -4,7 +4,7 @@ from message_filter import *
 from botActions import GolfilloActions as Gactions
 import logging
 
-logging.basicConfig(format='\n%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(format='\n%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.WARNING)
 
 application = Application.builder().token(get_token()).build()
 

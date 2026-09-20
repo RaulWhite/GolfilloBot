@@ -4,18 +4,23 @@ import os, random
 from specialActions import create_viejotruco
 
 async def send(update: Update, text: str, **kwargs):
+    if update.message is None:
+        return
     await update.message.reply_text(text=text, reply_to_message_id=update.message.message_id, **kwargs)
 
 async def sendaudio(update: Update, voice):
-    #bot.send_voice(chat_id=message.chat_id, voice=voice, reply_to_message_id=message.message_id
+    if update.message is None:
+        return
     await update.message.reply_voice(voice=voice, reply_to_message_id=update.message.message_id)
 
 async def sendphoto(update: Update, image):
-    # bot.send_photo(chat_id=message.chat_id, photo=image, reply_to_message_id=message.message_id)
+    if update.message is None:
+        return
     await update.message.reply_photo(photo=image, reply_to_message_id=update.message.message_id)
 
 async def sendvideonote(update: Update, video):
-    # bot.send_video_note(chat_id=message.chat_id, video_note=video)
+    if update.message is None:
+        return
     await update.message.reply_video_note(video_note=video, reply_to_message_id=update.message.message_id)
 
 def leerLista():
@@ -134,6 +139,8 @@ FFFFFFFFFFF
     # /viejotruco
     @staticmethod
     async def viejotruco(update: Update, context: CallbackContext):
+        if update.message is None:
+            return
         text = update.message.text
         if len(text.split()) > 1:
             text = text.split(" ", 1)[1]

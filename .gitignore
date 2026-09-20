@@ -8,3 +8,4 @@ files/*
 venv/
 .vscode/
 COMMIT_MESSAGE
+files/
