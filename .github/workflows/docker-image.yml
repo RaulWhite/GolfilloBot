@@ -3,6 +3,11 @@ name: Build image
 on:
   push:
     branches: [ 'main' ]
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+      - '.dockerignore'
+      - '.github/workflows/**'
 
 env:
   REGISTRY: docker.io
