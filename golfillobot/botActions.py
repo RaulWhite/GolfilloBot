@@ -146,12 +146,12 @@ FFFFFFFFFFF
             text = text.split(" ", 1)[1]
         else:
             text = ""
-        create_viejotruco("./files/truco_original.png", "./files/truco_caer.png",
-                            "./files/truco_generated.jpg", "./files/Cantarell-BoldOblique.ttf",
-                            text)
-        photo = open("./files/truco_generated.jpg", "rb")
-        await sendphoto(update, photo)
-        os.remove("./files/truco_generated.jpg")
+        tempimg = create_viejotruco("./files/truco_original.png", "./files/truco_caer.png",
+                                    "./files/Cantarell-BoldOblique.ttf", text)
+        try:
+            await sendphoto(update, tempimg)
+        finally:
+            tempimg.close()
 
     # /lajungla
     @staticmethod

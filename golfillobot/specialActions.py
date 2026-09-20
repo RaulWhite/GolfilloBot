@@ -1,7 +1,8 @@
 from PIL import Image, ImageFont, ImageDraw
+from io import BytesIO
 import datetime
 
-def create_viejotruco(image_name, blank_image, saved_image, ttf, text):
+def create_viejotruco(image_name, blank_image, ttf, text):
     text = text.upper().strip() # All uppercase
     if text.startswith("DE "): # Strip start already in image
         text = text[3:]
@@ -41,7 +42,11 @@ def create_viejotruco(image_name, blank_image, saved_image, ttf, text):
                 if line >= linesLimit: break # Number of lines limit
                 draw.text((w, h), word, font=font, fill=(0,0,0,255))
                 w += int(font.getlength(word)) # New x appending drawn word width
-    img.save(saved_image, "JPEG")
+    tempimg = BytesIO()
+    img.save(tempimg, "JPEG")
+    tempimg.seek(0)
+    img.close()
+    return tempimg
 
 def needWrap(w, h, imgW, line, conW, font, text):
     wrap = False
