@@ -43,7 +43,7 @@ You have 2 options for running this bot: **Python3** or **Docker**
 
 ### **Python3**
 
-You need Python3 and pip.
+You need Python >=3.10 and pip.
 
 Install the pip requirements with
 
@@ -69,7 +69,7 @@ python3 golfillobot/main.py
 
 ### **Docker** 🐋 (recommended method <3)
 
-An easy alternative. You can also build and use a docker image with the inclued `Dockerfile`. Simply build the image with
+An easy alternative. You can also build and use a docker image with the included `Dockerfile`. Simply build the image with
 
 ```bash
 docker image build . -t <IMAGE NAME>
