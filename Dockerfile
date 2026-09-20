@@ -1,5 +1,4 @@
-ARG platform=library
-FROM ${platform}/python:3.12-alpine
+FROM python:3.12-alpine
 
 WORKDIR /app
 COPY requirements.txt ./
