@@ -1,4 +1,5 @@
 from telegram.ext import Application, CommandHandler, MessageHandler
+from telegram import LinkPreviewOptions
 from tokens import get_token
 from message_filter import *
 from botActions import GolfilloActions as Gactions
@@ -6,7 +7,8 @@ import logging
 
 logging.basicConfig(format='\n%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.WARNING)
 
-application = Application.builder().token(get_token()).build()
+defaults = Defaults(link_preview_options=LinkPreviewOptions(is_disabled=True))
+application = Application.builder().token(get_token()).defaults(defaults).build()
 
 application.add_handler(CommandHandler("tblop", Gactions.tblop))
 application.add_handler(CommandHandler("list", Gactions.tblop))
