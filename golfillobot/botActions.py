@@ -168,5 +168,5 @@ FFFFFFFFFFF
     # /atontao
     @staticmethod
     async def atontao(update: Update, context: CallbackContext):
-        voice = ('./files/atontao.ogg', 'rb')
+        voice = open('./files/atontao.ogg', 'rb')
         await update.message.reply_voice(voice=voice)
