@@ -1,4 +1,4 @@
-from telegram.ext import Application, CommandHandler, MessageHandler
+from telegram.ext import Application, CommandHandler, Defaults, MessageHandler
 from telegram import LinkPreviewOptions
 from tokens import get_token
 from message_filter import *
