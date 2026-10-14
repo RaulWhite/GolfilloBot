@@ -164,3 +164,9 @@ FFFFFFFFFFF
     async def id(update: Update, context: CallbackContext):
         text = "Chat ID: " + str(update.effective_chat.id)
         await send(update, text)
+
+    # /atontao
+    @staticmethod
+    async def atontao(update: Update, context: CallbackContext):
+        voice = ('./files/atontao.ogg', 'rb')
+        await update.message.reply_voice(voice=voice)

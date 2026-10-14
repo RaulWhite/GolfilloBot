@@ -34,6 +34,7 @@ This bot, in particular, can help you in different ways. The messages the bot se
 |`/viejotruco`|The old trick of making a modular meme (writes message on image `files/truco_original.png`)|
 |`/lajungla`|Sends an audio ad from a famous meme (sends voice with the file `files/viernesdelajungla.ogg`)|
 |`/id`|Returns the ID of the current chat|
+|`/atontao`|Tells the fact that you are having a hard time thinking (sends voice with file `files/atontao.ogg`)|
 
 **NOTE:** The files are not available in this repo by request of the owner and/or for avoiding any trouble.
 
